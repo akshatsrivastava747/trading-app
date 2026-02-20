@@ -47,7 +47,7 @@ const Menu = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.replace("http://localhost:5173/login");
+    window.location.replace("https://trading-app-frontend-35mm.onrender.com/login");
   };
 
   const menuClass = "menu";

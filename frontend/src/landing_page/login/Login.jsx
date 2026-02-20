@@ -45,7 +45,7 @@ function Login() {
       localStorage.setItem("token", token);
 
       alert("Login successful!");
-      window.location.replace(`http://localhost:3000?token=${token}`);
+      window.location.replace(`https://trading-dashboard-51vb.onrender.com?token=${token}`);
     } catch (err) {
       console.log(err.response || err);  // 👈 see real error
       alert(err.response?.data?.error || "Login failed");

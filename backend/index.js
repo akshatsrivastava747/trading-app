@@ -46,7 +46,12 @@ const authMiddleware = (req, res, next) => {
 
 
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://your-frontend.onrender.com",
+    "https://your-dashboard.onrender.com"
+  ]
+}));
 
 app.use(bodyParser.json());
 
