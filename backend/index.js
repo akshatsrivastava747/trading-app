@@ -48,8 +48,8 @@ const authMiddleware = (req, res, next) => {
 
 app.use(cors({
   origin: [
-    "https://your-frontend.onrender.com",
-    "https://your-dashboard.onrender.com"
+    "https://trading-app-frontend-35mm.onrender.com",
+    "https://trading-dashboard-51vb.onrender.com"
   ]
 }));
 
