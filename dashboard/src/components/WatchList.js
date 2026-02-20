@@ -40,7 +40,7 @@ const WatchList = () => {
 
   const fetchSearchResults = async () => {
     try {
-      const res = await axios.get(`http://localhost:3002/search/${query}`);
+      const res = await axios.get(`https://trading-backend-buvs.onrender.com/search/${query}`);
 
       setResults(res.data);
     } catch (err) {
@@ -55,7 +55,7 @@ const WatchList = () => {
       const prices = await Promise.all(
         watchlist.map(async (stock) => {
           const res = await axios.get(
-            `http://localhost:3002/stock/${stock.symbol}`
+            `https://trading-backend-buvs.onrender.com/stock/${stock.symbol}`
           );
   
           return res.data.price; 
@@ -152,7 +152,7 @@ const WatchListItem = ({ stock }) => {
   const fetchStockPrice = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3002/stock/${stock.symbol}`
+        `https://trading-backend-buvs.onrender.com/stock/${stock.symbol}`
       );
 
       setStockData(res.data);

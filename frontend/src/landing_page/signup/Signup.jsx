@@ -23,7 +23,7 @@ function Signup() {
     try{
       e.preventDefault();
 
-    await axios.post("http://localhost:3002/signup", {
+    await axios.post("https://trading-backend-buvs.onrender.com/signup", {
       username: formData.username,
       email: formData.email,
       password: formData.password,

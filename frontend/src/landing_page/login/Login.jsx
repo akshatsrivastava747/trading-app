@@ -29,7 +29,7 @@ function Login() {
     try {
       e.preventDefault();
 
-      const res = await axios.post("http://localhost:3002/login", {
+      const res = await axios.post("https://trading-backend-buvs.onrender.com/login", {
         username: formData.username,
         password: formData.password,
       });

@@ -25,7 +25,7 @@ const Menu = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:3002/profile", {
+      const res = await axios.get("https://trading-backend-buvs.onrender.com/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

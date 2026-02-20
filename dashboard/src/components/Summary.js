@@ -12,7 +12,7 @@ const Summary = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await axios.get("http://localhost:3002/allHoldings", {
+        const res = await axios.get("https://trading-backend-buvs.onrender.com/allHoldings", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -24,7 +24,7 @@ const Summary = () => {
           holdingsFromDB.map(async (holding) => {
             try {
               const stockRes = await axios.get(
-                `http://localhost:3002/stock/${holding.symbol}`
+                `https://trading-backend-buvs.onrender.com/stock/${holding.symbol}`
               );
 
               return {
@@ -47,7 +47,7 @@ const Summary = () => {
           try {
             const token = localStorage.getItem("token");
       
-            const res = await axios.get("http://localhost:3002/profile", {
+            const res = await axios.get("https://trading-backend-buvs.onrender.com/profile", {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
@@ -104,14 +104,7 @@ const Summary = () => {
             <p>Total equity value</p>
           </div>
 
-          {/* <div className="second">
-            <p>
-              Margins used <span>0</span>{" "}
-            </p>
-            <p>
-              Opening balance <span>3.74k</span>{" "}
-            </p>
-          </div> */}
+      
         </div>
         <hr className="divider" />
       </div>

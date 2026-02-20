@@ -24,7 +24,7 @@ const BuyActionWindow = ({ symbol, mode, price,name }) => {
       }
 
       await axios.post(
-        "http://localhost:3002/newOrder",
+        "https://trading-backend-buvs.onrender.com/newOrder",
         {
           name: name,
           symbol:symbol,
@@ -48,7 +48,7 @@ const BuyActionWindow = ({ symbol, mode, price,name }) => {
   const handleSellClick = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`http://localhost:3002/holding/${symbol}`, {
+      const res = await axios.get(`https://trading-backend-buvs.onrender.com/holding/${symbol}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -68,7 +68,7 @@ const BuyActionWindow = ({ symbol, mode, price,name }) => {
       }
 
       await axios.post(
-        "http://localhost:3002/newOrder",
+        "https://trading-backend-buvs.onrender.com/newOrder",
         {
           name: name,
           symbol:symbol,

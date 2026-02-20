@@ -12,13 +12,13 @@ const TopBar = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await axios.get("http://localhost:3002/nifty", {
+        const res = await axios.get("https://trading-backend-buvs.onrender.com/nifty", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
 
-        const res2 = await axios.get("http://localhost:3002/sensex", {
+        const res2 = await axios.get("https://trading-backend-buvs.onrender.com/sensex", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

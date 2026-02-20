@@ -11,7 +11,7 @@ const Holdings = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await axios.get("http://localhost:3002/allHoldings", {
+        const res = await axios.get("https://trading-backend-buvs.onrender.com/allHoldings", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -23,7 +23,7 @@ const Holdings = () => {
           holdingsFromDB.map(async (holding) => {
             try {
               const stockRes = await axios.get(
-                `http://localhost:3002/stock/${holding.symbol}`
+                `https://trading-backend-buvs.onrender.com/stock/${holding.symbol}`
               );
 
               return {
