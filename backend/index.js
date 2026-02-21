@@ -27,9 +27,14 @@ const bcrypt = require("bcrypt");
 
 
 const authMiddleware = (req, res, next) => {
+  console.log("---- AUTH MIDDLEWARE RUNNING ----");
+  console.log("Auth header:", req.headers.authorization);
+  console.log("SECRET:", process.env.SECRET_KEY);
+
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
+    console.log("No token received");
     return res.status(401).json({ error: "No token" });
   }
 
@@ -37,9 +42,12 @@ const authMiddleware = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
-    req.userId = decoded.userId; // 🔥 attach user
+    console.log("Decoded token:", decoded);
+
+    req.userId = decoded.userId;
     next();
-  } catch {
+  } catch (err) {
+    console.log("JWT ERROR:", err.message);
     res.status(401).json({ error: "Invalid token" });
   }
 };
